@@ -15,6 +15,9 @@ public class PhanSo {
         do {
             System.out.print("Nhập số mẫu (khác 0): ");
             soMau = Double.parseDouble(sc.nextLine());
+            if(soMau == 0){
+                System.out.println("Nhap mau so khac");
+            }
         } while (soMau == 0);
 
     }
