@@ -1,6 +1,8 @@
 package toa_do;
 
-import java.awt.*;
+/**
+ * Viết chương trình nhập vào tọa độ của hai điểm trong mặt phẳng OXY và tính khoảng cách giữa hai điểm đó.
+ */
 
 public class KhoangCach {
     public static void main(String[] args) {

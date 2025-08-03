@@ -3,6 +3,10 @@ package quan_ly_hoc_sinh;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Viết chương trình cho phép nhập thông tin học sinh, bao gồm: tên học sinh, điểm toán, và điểm văn. Tính điểm trung bình và hiển thị kết quả.
+ */
+
 public class StudentManagement {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
