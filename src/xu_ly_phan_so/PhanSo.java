@@ -15,7 +15,7 @@ public class PhanSo {
         do {
             System.out.print("Nhập số mẫu (khác 0): ");
             soMau = Double.parseDouble(sc.nextLine());
-            if(soMau == 0){
+            if (soMau == 0) {
                 System.out.println("Nhap mau so khac 0");
             }
         } while (soMau == 0);
@@ -57,35 +57,37 @@ public class PhanSo {
     //tổng 2 phân số
     PhanSo cong(PhanSo phanSoKhac) {
         PhanSo ketQua = new PhanSo();
-        ketQua.soTu = this.soTu * phanSoKhac.soMau + phanSoKhac.soTu*this.soMau;
-        ketQua.soMau= this.soMau * phanSoKhac.soMau;
-        return ketQua;
-    }
-    PhanSo hieu(PhanSo phanSoKhac){
-        PhanSo ketQua= new PhanSo();
-        ketQua.soTu=this.soTu * phanSoKhac.soMau - phanSoKhac.soTu*this.soMau;
-        ketQua.soMau=this.soMau*phanSoKhac.soMau;
+        ketQua.soTu = this.soTu * phanSoKhac.soMau + phanSoKhac.soTu * this.soMau;
+        ketQua.soMau = this.soMau * phanSoKhac.soMau;
         return ketQua;
     }
 
-    PhanSo nhan(PhanSo phanSoKhac){
+    PhanSo hieu(PhanSo phanSoKhac) {
         PhanSo ketQua = new PhanSo();
-        ketQua.soTu=this.soTu * phanSoKhac.soTu;
-        ketQua.soMau=this.soMau * phanSoKhac.soMau;
+        ketQua.soTu = this.soTu * phanSoKhac.soMau - phanSoKhac.soTu * this.soMau;
+        ketQua.soMau = this.soMau * phanSoKhac.soMau;
         return ketQua;
     }
 
-    PhanSo chia(PhanSo phanSoKhac){
-        PhanSo ketQua =new PhanSo();
-        ketQua.soTu= this.soTu * phanSoKhac.soMau;
-        ketQua.soMau=this.soMau * phanSoKhac.soTu;
+    PhanSo nhan(PhanSo phanSoKhac) {
+        PhanSo ketQua = new PhanSo();
+        ketQua.soTu = this.soTu * phanSoKhac.soTu;
+        ketQua.soMau = this.soMau * phanSoKhac.soMau;
         return ketQua;
     }
 
-    boolean laPhanSoDuong(){
-        return soTu*soMau > 0 || soTu == 0;
+    PhanSo chia(PhanSo phanSoKhac) {
+        PhanSo ketQua = new PhanSo();
+        ketQua.soTu = this.soTu * phanSoKhac.soMau;
+        ketQua.soMau = this.soMau * phanSoKhac.soTu;
+        return ketQua;
     }
-    boolean laPhanSoKhong(){
+
+    boolean laPhanSoDuong() {
+        return soTu * soMau > 0 || soTu == 0;
+    }
+
+    boolean laPhanSoKhong() {
         return soTu == 0;
     }
 }
