@@ -5,13 +5,11 @@ public class Student {
     private String name;
     private double score;
 
-
-
     public int getId() {
         return id;
     }
 
-    public Student(int id,String name,double score) {
+    public Student(int id, String name, double score) {
         this.id = id;
         this.name = name;
         this.score = score;
@@ -34,9 +32,9 @@ public class Student {
     }
 
     public void setScore(double score) {
-        if(score >= 0 && score <= 10){
+        if (score >= 0 && score <= 10) {
             this.score = score;
-        }else {
+        } else {
             System.out.println("Diem phai > 0 & < 10");
         }
     }
