@@ -1,6 +1,20 @@
 package ss3_static.mathutil;
 
 public class MathUtil {
-    private double a;
+    public static double add(double a, double b){
+        return a+ b;
+    }
+
+    public static double subtract(double a,double b){
+        return a - b;
+    }
+
+    public static double multiply(double a, double b){
+        return a * b;
+    }
+
+    public static double divide(double a,double b){
+        return a / b;
+    }
 
 }
