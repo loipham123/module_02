@@ -1,4 +1,4 @@
-package dsa_list;
+package dsa_list.my_arraylist;
 
 public class Main {
     public static void main(String[] args) {
