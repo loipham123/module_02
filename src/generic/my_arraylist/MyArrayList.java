@@ -1,13 +1,13 @@
-package dsa_list.my_arraylist;
+package generic.my_arraylist;
 
-public class MyArrayList {
+public class MyArrayList<E> {
     private int capacity;//kich thuoc thuc te
 
     private int size;//so phan tu add vao
 
-    private int[] elementData;
+    private Object[] elementData;
 
-    private final int[] emptyArray = {}; //tai su dung nhieu lan
+    private final Object[] emptyArray = {}; //tai su dung nhieu lan
 
     public MyArrayList() {
         elementData = emptyArray;
@@ -17,11 +17,11 @@ public class MyArrayList {
         return size;
     }
 
-    public void add(int element) {
+    public void add(E element) {
         //truong hop 1: size == capacity
         if (elementData == emptyArray) { //Thông qua default
             capacity = 10;
-            elementData = new int[capacity];
+            elementData = new Object[capacity];
         }
         //Kiểm tra xem size == capacity
         if (size == capacity) {
@@ -34,7 +34,7 @@ public class MyArrayList {
                 capacity *= 1.5;
             }
 
-            int[] temp = new int[capacity];
+            Object[] temp = new Object[capacity];
 
             //đổ dữ liệu qa mảng mới
             for (int i = 0; i < elementData.length; i++) {
@@ -69,7 +69,7 @@ public class MyArrayList {
             if (size == capacity) {
                 capacity++;
             }
-            int[] brr = new int[this.capacity];
+            Object[] brr = new Object[this.capacity];
 
             for (int i = 0; i < size; i++) {
                 brr[i] = elementData[i];
@@ -102,16 +102,16 @@ public class MyArrayList {
     }
 
     //e.Trả về phần tử index
-    public Integer get(int index) {
+    public E get(int index) {
         if (index < 0 || index >= size) {
             System.out.println("Index ngoài phạm vi");
             return null;
         }
-        return elementData[index];
+        return (E) elementData[index];
     }
 
     //f.Lấy vị trí index đầu phần tử đầu tiên tìm thấy
-    public int indexOf(int element) {
+    public int indexOf(E element) {
         for (int i = 0; i < size; i++) {
             if (elementData[i] == element) {
                 return i;
@@ -121,7 +121,7 @@ public class MyArrayList {
     }
 
     //g.Lấy vị trí index phần tử cuối cùng tìm thấy
-    public int lastIndexOf(int element) {
+    public int lastIndexOf(E element) {
         for (int i = size - 1; i >= 0; i--) {
             if (elementData[i] == element) {
                 return i;
@@ -143,7 +143,7 @@ public class MyArrayList {
     }
 
     //i.Xóa tất cả phần tử element
-    public void removeElement(int element) {
+    public void removeElement(E element) {
         int newIndex = 0;
         //sao chép phần tử khác element vào mảng mới
         for (int i = 0; i < size; i++) {
