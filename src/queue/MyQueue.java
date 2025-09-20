@@ -1,18 +1,18 @@
 package queue;
 
 public class MyQueue {
-        private class Node {
-            int value;
-            Node next;
+    private class Node {
+        int value;
+        Node next;
 
-            public Node(int value) {
-                this.value = value;
-            }
+        public Node(int value) {
+            this.value = value;
         }
+    }
 
-        private Node head;
-        private Node tail;
-        private int size;
+    private Node head;
+    private Node tail;
+    private int size;
 
     public void add(int element) {
         Node nodeNew = new Node(element);
@@ -43,6 +43,7 @@ public class MyQueue {
         size--;
         return val;
     }
+
     public int peek() {
         if (tail == null) throw new RuntimeException("List is empty");
         return tail.value;
@@ -52,17 +53,17 @@ public class MyQueue {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        Node temp= head;
-        for(int i=0;i<size;i++){
+        Node temp = head;
+        for (int i = 0; i < size; i++) {
             stringBuilder.append(temp.value).append("\t");
-            temp=temp.next;
+            temp = temp.next;
         }
         return stringBuilder.toString();
     }

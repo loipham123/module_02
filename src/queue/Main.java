@@ -8,7 +8,7 @@ public class Main {
         queue.add(20);
         queue.add(30);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             System.out.println(queue.remove());
         }
         System.out.println(queue.size());

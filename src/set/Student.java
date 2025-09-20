@@ -1,16 +1,16 @@
-package da_hinh;
+package set;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student> {
     int id;
     private String name;
-    private int age;
+    private double score;
 
     public Student(int id, String name, int age) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.score = age;
     }
 
     public int getId() {
@@ -29,13 +29,14 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public double getScore() {
+        return score;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setScore(int score) {
+        this.score = score;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -54,7 +55,18 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", age=" + score +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        int scoreCompera = Double.compare(this.score, o.score);
+
+        if(scoreCompera !=0){
+            return scoreCompera;
+        }
+        return this.name.compareTo(o.name);
+
     }
 }

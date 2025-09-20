@@ -9,17 +9,18 @@ public class MyLinkedList<E> {
             this.value = value;
         }
     }
+
     private Node head;
     private Node tail;
     public int size;
 
-    public void addFirst(E element){
+    public void addFirst(E element) {
         Node newNode = new Node(element);
-        if(head == null){//trường hợp danh sách rỗng
+        if (head == null) {//trường hợp danh sách rỗng
             head = tail = newNode;
-        }else {
-            newNode.next=head;
-            head= newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
         }
         size++;
     }
@@ -27,13 +28,14 @@ public class MyLinkedList<E> {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        Node temp= head;
-        for(int i=0;i<size;i++){
+        Node temp = head;
+        for (int i = 0; i < size; i++) {
             stringBuilder.append(temp.value).append("\t");
-            temp=temp.next;
+            temp = temp.next;
         }
         return stringBuilder.toString();
     } // c. addLast(int element)
+
     public void addLast(E value) {
         Node newNode = new Node(value);
         if (tail == null) {
@@ -63,6 +65,7 @@ public class MyLinkedList<E> {
             size++;
         }
     }
+
     //e. removeFirst ()
     public E removeFirst() {
         if (head == null) {
@@ -79,6 +82,7 @@ public class MyLinkedList<E> {
         size--; // giảm kích thước
         return (E) value; // trả về giá trị đã xóa
     }
+
     //f. removeLast ()
     public Integer removeLast() {
         if (tail == null) {
@@ -100,16 +104,17 @@ public class MyLinkedList<E> {
         size--;
         return (Integer) value;
     }
+
     //g. remove (int index)
     public E remove(int index) {
         if (index < 0 || index >= size) {
             System.out.println("Index ko hợp lệ");
             return null;
         }
-        if (index == 0){
+        if (index == 0) {
             return removeFirst();
         }
-        if (index == size - 1){
+        if (index == size - 1) {
             return (E) removeLast();
         }
 
@@ -122,20 +127,23 @@ public class MyLinkedList<E> {
         size--;
         return (E) value;
     }
+
     //h. getFirst ()
     public E getFirst() {
-        if (head == null){
+        if (head == null) {
             return null;
         }
         return (E) head.value;
     }
+
     //i. getLast ()
     public E getLast() {
-        if (tail == null){
+        if (tail == null) {
             return null;
         }
         return (E) tail.value;
     }
+
     //j. get (int index)
     public E get(int index) {
         if (index < 0 || index >= size) {
@@ -148,6 +156,7 @@ public class MyLinkedList<E> {
         }
         return (E) current.value;
     }
+
     //k. set (int index, int element)
     public void set(int index, int value) {
         if (index < 0 || index >= size) {
@@ -160,6 +169,7 @@ public class MyLinkedList<E> {
         }
         current.value = value;
     }
+
     //l. indexOf (int element)
     public int indexOf(E element) {
         Node current = head;
@@ -173,13 +183,14 @@ public class MyLinkedList<E> {
         }
         return -1;
     }
+
     //m. lastIndexOf (int element)
     public int lastIndexOf(E element) {
         Node current = head;
         int index = 0;
         int lastIndex = -1;
         while (current != null) {
-            if (current.value == element){
+            if (current.value == element) {
                 lastIndex = index;
             }
             current = current.next;

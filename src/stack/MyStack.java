@@ -2,7 +2,7 @@ package stack;
 
 import dsa_list.my_linkedlist.MyLinkedList;
 
-public class MyStack<E> {
+public class    MyStack<E> {
     private class Node {
         Object value;
         Node next;
@@ -54,7 +54,7 @@ public class MyStack<E> {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
@@ -62,10 +62,10 @@ public class MyStack<E> {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        Node temp= head;
-        for(int i=0;i<size;i++){
+        Node temp = head;
+        for (int i = 0; i < size; i++) {
             stringBuilder.append(temp.value).append("\t");
-            temp=temp.next;
+            temp = temp.next;
         }
         return stringBuilder.toString();
     }
